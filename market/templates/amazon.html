@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ Welcome to the test site
+{% endblock %}
+
+{% block content %}
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+            <h1 class="display-6 font-weight-normal">Amazon profit calculator</h1>
+            <br>
+
+            <form class="pure-form" method="POST" action="/amazon">
+            Amazon price:<br>
+            <input type="text" name="az_price"><br>
+            <input type="text" name="cost"><br>
+            <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+            </form>
+
+
+
+
+
+
+    <div class="row" style="margin-top:40px; margin-left:20px">
+   <div class="col-8">
+      <h2>{% if final_amount %}
+            <p>{% print("You will get {} AED".format(final_amount)) %}</p>
+            {% endif %}</h2>
+       <h2>{% if profit %}
+            <p>{% print("Your profit is {} AED".format(profit)) %}</p>
+            {% endif %}</h2>
+      <p>Click on one of the items to start buying</p>
+   </div>
+
+   <div class="col-4">
+      <h2>Owned items</h2>
+      <p>You can sell the items you don't want</p>
+      <br>
+   </div>
+</div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+{% endblock %}
