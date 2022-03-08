@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ UAE Amazon seller fee calculator
+{% endblock %}
+
+{% block content %}
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+            <h1 class="display-6 font-weight-normal">Amazon profit calculator</h1>
+        <body class="text-center">
+        <div class="row" style="margin-top:40px; margin-left:20px">
+            <div class="col-2"></div>
+            <div class="col-8">
+            <form class="pure-form" method="POST" action="/amazon">
+            <input type="text"  class="form-control" placeholder="Amazon Price" name="az_price"><br>
+            <input type="text"  class="form-control" placeholder="Our Cost" name="cost"><br>
+            <button type="submit" class="btn btn-lg btn-block btn-primary" value="Submit">Submit</button>
+            </div>
+        </div>
+                </body>
+            </form>
+
+
+
+
+
+
+
+    <div class="row" style="margin-top:40px; margin-left:20px">
+        <div class="col-2"></div>
+   <div class="col-4">
+      <h2>{% if final_amount %}
+            <p>{% print("You will get {} AED".format(final_amount)) %}</p>
+            {% endif %}</h2>
+       <h2>{% if profit %}
+            <p>{% print("Your profit is {} AED".format(profit)) %}</p>
+            {% endif %}</h2>
+      <p>Click on one of the items to start buying</p>
+   </div>
+   <div class="col-4">
+      <h2>Owned items</h2>
+      <p>You can sell the items you don't want</p>
+      <br>
+       <br>
+
+   </div>
+</div>
+</div>
+<br>
+<br>
+<font size = "2">Under UAE VAT Laws, Amazon is required to calculate and collect UAE VAT on its fees related to transactions made by sellers, such as monthly subscription and Selling on Amazon fees.
+        VAT will apply depending on the type of fee being assessed and is not necessarily dependent on the VAT status of the Seller.
+All fees payable by you to Amazon pursuant to the Agreement entered into are exclusive of VAT and similar taxes, and you will be required to pay any taxes that Amazon is legally obligated to charge on such amounts.
+    Amazon shall provide you with a Tax Invoice for all fees and applicable VAT payable by you. </font>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
