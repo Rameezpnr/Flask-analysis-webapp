@@ -11,6 +11,10 @@ from flask_login import login_user, logout_user, login_required, current_user
 def home_page():
     return render_template('home.html')
 
+@app.route('/register2')
+def register2_page():
+    return render_template('register2.html')
+
 
 @app.route('/amazon', methods=['POST', 'GET'])
 def amazon_page():
@@ -22,11 +26,11 @@ def amazon_page():
             az_price = float(request.form.get('az_price'))
             final_amount = calc_final(az_price)
             cost = request.form['cost']
+            tf = round((final_amount * 0.006) + 0.65,2)
             if cost != '':
                 cost = float(request.form.get('cost'))
                 profit = calc_profit(cost, final_amount)
                 pm = calc_pm(profit, final_amount)
-                tf = round((final_amount*0.006) + 0.65)
     return render_template("amazon.html", profit=profit, final_amount=final_amount, pm=pm, tf=tf)
 
 def calc_final(az_price):

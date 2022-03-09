@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ Welcome to the test site
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+ <div class="container">
+     <br>
+     <br>
+     <br>
+            <img class="mb-4" src="http://alnoorgarments.com//assets/frontend/image/LogoAlNoor.png" width="400" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+            <br>
+
+                Sorry, Registration is only for authorised person
+            </h1>
+            <br>
+            <br>
+            <div class="checkbox mb-3">
+               <h6>Already have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+
+
+
+    </div>
+
+</body>
+{% endblock %}
