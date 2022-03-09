@@ -43,10 +43,12 @@
             <p>{% print("Possible tax refund: {} AED".format(tf)) %}</p>
             {% endif %}</h2>
    </div>
+   {% if final_amount %}
    <div class="col-5">
       <h2>Amazon charges </h2>
       <p>Referral fee = Kitchen: 12%+Tax (OR)  Home: 11%+Tax <br> (OR) Electronic appliance: 8% if >250, 13% if <250  </p>
        <p>Shipping fee = 13 AED charge + 0.65 Tax <br> charge maybe higher when oversize / 12kg+</p>
+       {% endif %}
       <br>
        <br>
 
