@@ -30,15 +30,16 @@ def amazon_page():
             if cost != '':
                 cost = float(request.form.get('cost'))
                 profit = calc_profit(cost, final_amount)
-                pm = calc_pm(profit, final_amount)
-    return render_template("amazon.html", profit=profit, final_amount=final_amount, pm=pm, tf=tf)
+                pm = calc_pm(profit, cost)
+    return render_template("amazon.html", profit=profit, final_amount=final_amount, pm=pm, tf=tf,)
 
 def calc_final(az_price):
     return round(((az_price * .874) - 13.65), 2)
 def calc_profit(cost, final_amount):
     return round((final_amount - cost), 2)
-def calc_pm(profit, final_amount):
-    return round((profit/final_amount)*100, 2)
+def calc_pm(profit, cost):
+    return round((profit/cost)*100, 2)
+
 
 @app.route('/market', methods=['GET', 'POST'])
 @login_required
