@@ -1,1 +1,1 @@
-This website is deployed on https://analysis---webapp.herokuapp.com
+This website is deployed on https://alnoorgroup.herokuapp.com
